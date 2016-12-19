@@ -1,6 +1,6 @@
 THISDIR := frequencydomain
 THISBOOK := $(THISDIR)
-BASEVER := bcf8585
+BASEVER := 13a3089
 
 include ../latex/make.vars
 
