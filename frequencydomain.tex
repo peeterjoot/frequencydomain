@@ -1,0 +1,153 @@
+%
+% Copyright © 2016 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{frequencydomain}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{macros_cal}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Geometric Algebra representation of Maxwell's equations in the frequency domain}
+%\chapter{Geometric Algebra representation of Maxwell's equations in the frequency domain}
+%\label{chap:frequencydomain}
+% \citep{doran2003gap}
+% \citep{jackson1975cew}
+% \citep{griffiths1999introduction}
+
+\section{Geometric Algebra form of Maxwell's equations in the frequency domain}
+
+Presuming time dependence of all fields and sources of the form
+
+\begin{dmath}\label{eqn:frequencydomain:20}
+\calT(\Bx, t) = \Real( T(\Bx) e^{j \omega t} ),
+\end{dmath}
+
+the time harmonic form of Maxwell's equations are
+
+\begin{dmath}\label{eqn:frequencydomain:40}
+\begin{aligned}
+\spacegrad \cross \BE &= -j \omega \BB \\
+\spacegrad \cdot \BD &= \rho \\
+\spacegrad \cross \BH &= \BJ + j \omega \BD \\
+\spacegrad \cdot \BB &= 0
+\end{aligned}
+\end{dmath}
+
+In linear simple media, with \( \BD = \epsilon \BE \), and \( \BB = \mu \BH \), the Geometric Algebra identity
+
+\begin{dmath}\label{eqn:frequencydomain:120}
+\Bx \By = \Bx \cdot \By + I \Bx \cross \By,
+\end{dmath}
+
+where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows Maxwell's frequency domain equations to be reduced to a pair of coupled multivector equations
+
+\begin{dmath}\label{eqn:frequencydomain:60}
+\begin{aligned}
+\spacegrad \BE     &= -j \omega \mu (I \BH) + \rho/\epsilon \\
+\spacegrad (I \BH) &= -\BJ - j \omega \epsilon \BE.
+\end{aligned}
+\end{dmath}
+
+Furthermore,
+introducing an electromagnetic field
+
+\begin{dmath}\label{eqn:frequencydomain:80}
+F = \BE + \eta I \BH,
+\end{dmath}
+
+where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media, this admit a further consolidation
+
+\begin{dmath}\label{eqn:frequencydomain:100}
+(\spacegrad + j k) F
+=
+\rho/\epsilon - \eta \BJ.
+\end{dmath}
+
+Here \( k = \omega/v \) is the wave number, and \( v = 1/\sqrt{\mu\epsilon} \) is the group velocity of a wave in the media.  Observe that there are two complex quantities in the mix \( j = \sqrt{-1} \), and \( I^2 = -1 \), each of which commutes with any of the fields or sources, or the gradient operator.
+
+\section{Plane waves}
+
+For source free conditions, and plane waves of the form \( \BE = \BE_0 e^{-j \Bk \cdot \Bx}, \BH = \BH_0 e^{-j \Bk \cdot \Bx} \), Maxwell's \cref{eqn:frequencydomain:100} is reduced to a single homogeneous first order multivector equation
+
+\begin{dmath}\label{eqn:frequencydomain:140}
+(\spacegrad + j k) F = 0.
+\end{dmath}
+
+The gradient action on the electromagnetic field is
+
+\begin{dmath}\label{eqn:frequencydomain:160}
+\spacegrad F e^{-j \Bk \cdot \Bx}
+=
+\Be_m \partial_m
+F e^{-j \Bk \cdot \Bx}
+=
+\Be_m \partial_m
+F
+\lr{ -j k_m }
+e^{-j \Bk \cdot \Bx}
+=
+-j \Bk F,
+\end{dmath}
+
+so
+
+\begin{dmath}\label{eqn:frequencydomain:180}
+j k (1 - \kcap) F = 0.
+\end{dmath}
+
+This means that the field must be of the form
+
+\begin{dmath}\label{eqn:frequencydomain:200}
+F = (1 + \kcap) \BE_0 e^{-j \Bk \cdot \Bx},
+\end{dmath}
+
+where \( \BE_0 \) is a vector valued complex constant, and \( \kcap \cdot \BE_0 = 0 \).  The dot product constraint follows from the requirement that the \( I \BH \) portion of the electromagnetic field is a bivector.
+
+From \cref{eqn:frequencydomain:200} the interdependencies of the electric and magnetic field portions of the field can be read off immediately.  Those are
+
+\begin{dmath}\label{eqn:frequencydomain:220}
+\begin{aligned}
+\BE &= \BE_0 e^{-j \Bk \cdot \Bx} \\
+I \BH &= \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx} \\
+\end{aligned}
+\end{dmath}
+
+Observe that it must also be the case that the magnetic field is perpendicular to the propagation direction
+
+\begin{dmath}\label{eqn:frequencydomain:n}
+\kcap \cdot \BH 
+= \gpgradezero{ \kcap -I \kcap \BE_0 } e^{-j \Bk \cdot \Bx} 
+= \gpgradezero{ -I \BE_0 } e^{-j \Bk \cdot \Bx} 
+= 0.
+\end{dmath}
+
+In conventional vector treatments of electromagnetic field theory the magnetic field relationship in \cref{eqn:frequencydomain:220} is written out as a vector cross product relationship instead of a bivector equation
+
+\begin{dmath}\label{eqn:frequencydomain:240}
+\BH
+= -I \inv{\eta} \kcap \BE
+= -I \inv{\eta} (\kcap \wedge \BE)
+= -I \inv{\eta} I (\kcap \cross \BE)
+= \inv{\eta} \kcap \cross \BE
+\end{dmath}
+
+%}
+%\EndArticle
+\EndNoBibArticle
