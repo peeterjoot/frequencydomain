@@ -93,23 +93,23 @@ For source free conditions, and plane waves of the form \( \BE = \BE_0 e^{-j \Bk
 The gradient action on the electromagnetic field is
 
 \begin{dmath}\label{eqn:frequencydomain:160}
-\spacegrad F e^{-j \Bk \cdot \Bx}
+\spacegrad F_0 e^{-j \Bk \cdot \Bx}
 =
 \Be_m \partial_m
-F e^{-j \Bk \cdot \Bx}
+F_0 e^{-j \Bk \cdot \Bx}
 =
 \Be_m \partial_m
-F
+F_0
 \lr{ -j k_m }
 e^{-j \Bk \cdot \Bx}
 =
--j \Bk F,
+-j \Bk F_0,
 \end{dmath}
 
 so
 
 \begin{dmath}\label{eqn:frequencydomain:180}
-j k (1 - \kcap) F = 0.
+j k (1 - \kcap) F_0 = 0.
 \end{dmath}
 
 This means that the field must be of the form
@@ -125,7 +125,7 @@ From \cref{eqn:frequencydomain:200} the interdependencies of the electric and ma
 \begin{dmath}\label{eqn:frequencydomain:220}
 \begin{aligned}
 \BE &= \BE_0 e^{-j \Bk \cdot \Bx} \\
-I \BH &= \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx} \\
+I \BH &= \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx}.
 \end{aligned}
 \end{dmath}
 
@@ -133,7 +133,7 @@ Observe that it must also be the case that the magnetic field is perpendicular t
 
 \begin{dmath}\label{eqn:frequencydomain:n}
 \kcap \cdot \BH 
-= \gpgradezero{ \kcap -I \kcap \BE_0 } e^{-j \Bk \cdot \Bx} 
+= \gpgradezero{ \kcap (-I \kcap \BE_0) } e^{-j \Bk \cdot \Bx} 
 = \gpgradezero{ -I \BE_0 } e^{-j \Bk \cdot \Bx} 
 = 0.
 \end{dmath}
@@ -145,7 +145,7 @@ In conventional vector treatments of electromagnetic field theory the magnetic f
 = -I \inv{\eta} \kcap \BE
 = -I \inv{\eta} (\kcap \wedge \BE)
 = -I \inv{\eta} I (\kcap \cross \BE)
-= \inv{\eta} \kcap \cross \BE
+= \inv{\eta} \kcap \cross \BE.
 \end{dmath}
 
 %}
