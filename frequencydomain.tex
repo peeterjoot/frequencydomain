@@ -56,7 +56,8 @@ In linear simple media, with \( \BD = \epsilon \BE \), and \( \BB = \mu \BH \), 
 \Bx \By = \Bx \cdot \By + I \Bx \cross \By,
 \end{dmath}
 
-where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows Maxwell's frequency domain equations to be reduced to a pair of coupled multivector equations
+%where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows 
+can be used to reduce Maxwell's equations to a pair of coupled multivector equations
 
 \begin{dmath}\label{eqn:frequencydomain:60}
 \begin{aligned}
@@ -65,8 +66,7 @@ where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows Maxwell's fr
 \end{aligned}
 \end{dmath}
 
-Furthermore,
-introducing an electromagnetic field
+Furthermore, introducing a multivector electromagnetic field
 
 \begin{dmath}\label{eqn:frequencydomain:80}
 F = \BE + \eta I \BH,
@@ -125,20 +125,31 @@ From \cref{eqn:frequencydomain:200} the interdependencies of the electric and ma
 \begin{dmath}\label{eqn:frequencydomain:220}
 \begin{aligned}
 \BE &= \BE_0 e^{-j \Bk \cdot \Bx} \\
-I \BH &= \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx}.
+I \BH &= \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx},
 \end{aligned}
 \end{dmath}
 
-Observe that it must also be the case that the magnetic field is perpendicular to the propagation direction
+or
+\begin{dmath}\label{eqn:frequencydomain:380}
+I \BH = \inv{\eta} \kcap \BE.
+\end{dmath}
 
+Since \R{3} pseudoscalar can be written as
+
+\begin{dmath}\label{eqn:frequencydomain:400}
+I = \kcap \Ecap \Hcap,
+\end{dmath}
+
+the directions \( \kcap, \Ecap, \Hcap \) must form a right handed triple.  It is thus expected that the magnetic field is perpendicular to the propagation direction, and that the electric and magnetic fields are explicitly perpendicular, facts that are easily verified
+
+\begin{subequations}
+\label{eqn:frequencydomain:440}
 \begin{dmath}\label{eqn:frequencydomain:260}
 \kcap \cdot \BH
 = \gpgradezero{ \kcap (-I \kcap \BE_0) } e^{-j \Bk \cdot \Bx}
 = \gpgradezero{ -I \BE_0 } e^{-j \Bk \cdot \Bx}
-= 0.
+= 0
 \end{dmath}
-
-Additionally, the electric and magnetic fields are perpendicular
 \begin{dmath}\label{eqn:frequencydomain:280}
 \BE \cdot \BH
 =
@@ -149,53 +160,34 @@ Additionally, the electric and magnetic fields are perpendicular
 =
 0.
 \end{dmath}
+\end{subequations}
 
-In conventional vector treatments of electromagnetic field theory the magnetic field relationship in \cref{eqn:frequencydomain:220} is written out as a vector cross product relationship instead of a bivector equation
+In conventional vector treatments of electromagnetic field theory the field relationships of \cref{eqn:frequencydomain:220} and the propagation directions are written out explicitly as cross products, instead of multivector equations.  Those cross product relations are obtained easily
 
+\begin{subequations}
+\label{eqn:frequencydomain:420}
 \begin{dmath}\label{eqn:frequencydomain:240}
 \BH
 = -I \inv{\eta} \kcap \BE
 = -I \inv{\eta} (\kcap \wedge \BE)
 = -I \inv{\eta} I (\kcap \cross \BE)
-= \inv{\eta} \kcap \cross \BE.
+= \inv{\eta} \kcap \cross \BE
 \end{dmath}
-
-With \( I \BH = (1/\eta) \kcap \BE \), the electric field can be expressed in terms of the magnetic field by left multiplication with \( \eta \kcap \), giving
-
 \begin{dmath}\label{eqn:frequencydomain:300}
 \BE
-=
-\eta \kcap I \BH.
-\end{dmath}
-
-The conventional cross product relationship is easily recovered from this
-
-\begin{dmath}\label{eqn:frequencydomain:320}
+= \eta \kcap I \BH
 = \eta I \kcap \wedge \BH
 = \eta I^2 \kcap \cross \BH
-= \eta \BH \cross \kcap.
+= \eta \BH \cross \kcap
 \end{dmath}
-
-It is also possible to solve for the direction of the propagation by right multiplying \( \kcap \Ecap = I \Hcap \) with \( \Ecap \) giving
-
 \begin{dmath}\label{eqn:frequencydomain:340}
-\kcap
-=
-\kcap \Ecap^2
-= I \Hcap \Ecap.
-\end{dmath}
-
-This can be written in the conventional cross product form if desired
-
-\begin{dmath}\label{eqn:frequencydomain:360}
 \kcap
 = I \Hcap \Ecap
 = I (\Hcap \wedge \Ecap)
 = I^2 (\Hcap \cross \Ecap)
 = \Ecap \cross \Hcap.
 \end{dmath}
-
-Observe that the \R{3} pseudoscalar can be written as \( I = \kcap \Ecap \Hcap \), reflecting the fact that \( \kcap, \Ecap, \Hcap \) form a right handed triple.
+\end{subequations}
 
 %}
 %\EndArticle
