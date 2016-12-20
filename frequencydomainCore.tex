@@ -27,7 +27,7 @@ In linear simple media, with \( \BD = \epsilon \BE \), and \( \BB = \mu \BH \), 
 \Bx \By = \Bx \cdot \By + I \Bx \cross \By,
 \end{dmath}
 
-%where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows 
+%where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows
 can be used to reduce Maxwell's equations to a pair of coupled multivector equations
 
 \begin{dmath}\label{eqn:frequencydomainCore:60}
@@ -52,6 +52,42 @@ where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media, a further 
 \end{dmath}
 
 Here \( k = \omega/v \) is the wave number, and \( v = 1/\sqrt{\mu\epsilon} \) is the group velocity of a wave in the media.  Observe that there are two complex quantities in the mix \( j = \sqrt{-1} \), and \( I^2 = -1 \), each of which commutes with any of the fields or sources, or the gradient operator.
+
+\makeexample{Extracting the electric and magnetic fields.}{example:frequencydomainCore:1}{
+
+With two complex quantities involved in the field multivector \cref{eqn:frequencydomainCore:80}, it might be unclear how to recover the separate electric and magnetic fields.
+While \( F \) is complex with respect to both \( j \) and \( I \), this multivector has two different grades.  Specifically, \( \BE \) is a vector and \( I \BH \) is a bivector, and can both be extracted using grade selection operations.  Suppose for example
+
+\begin{dmath}\label{eqn:frequencydomainCore:460}
+\begin{aligned}
+\BE &= e_1 e^{-j k z} \\
+\BH &= \inv{\eta} e_2 e^{-j k z}
+\end{aligned}
+\end{dmath}
+
+The composite field is
+
+\begin{equation}\label{eqn:frequencydomainCore:480}
+F = (\Be_1 + \Be_3 \Be_1) e^{-j k z}.
+\end{equation}
+
+Extracting \( \BE\), and \( \BH \) when desired requires grade 1 and grade 2 selections respectively
+
+\begin{subequations}
+\label{eqn:frequencydomainCore:500}
+\begin{dmath}\label{eqn:frequencydomainCore:520}
+\BE = \gpgradeone{F} = \Be_1 e^{-j k z} \\
+\end{dmath}
+\begin{dmath}\label{eqn:frequencydomainCore:540}
+\BH
+= -\frac{I}{\eta} \gpgradeone{F}
+= -\inv{\eta} (\Be_1 \Be_2 \Be_3) \Be_3 \Be_1 e^{-j k z}
+= \inv{\eta} \Be_2 e^{-j k z}.
+\end{dmath}
+\end{subequations}
+
+The key here is that the spatial pseudoscalar, while it satisfies \( I^2 = -1 \) like a complex number, also has a geometric structure and can be distinguished from the scalar complex \( j \) that is used in the phasor construction.
+} % example
 
 \section{Plane waves}
 
@@ -91,7 +127,7 @@ F = (1 + \kcap) \BE_0 e^{-j \Bk \cdot \Bx},
 
 where \( \BE_0 \) is a vector valued complex constant, and \( \kcap \cdot \BE_0 = 0 \).  The dot product constraint follows from the requirement that the \( I \BH \propto \kcap \BE_0 \) portion of the electromagnetic field is a bivector.
 
-From \cref{eqn:frequencydomainCore:200} the interdependencies of the electric and magnetic field portions of the field can be read off immediately.  Those are
+From \cref{eqn:frequencydomainCore:200} the interdependence of the electric and magnetic field portions of the field can be read off immediately.  Those are
 
 \begin{dmath}\label{eqn:frequencydomainCore:220}
 \begin{aligned}
