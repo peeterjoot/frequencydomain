@@ -2,3 +2,5 @@
 #perl -p -i ../latex/bin/latexRegex.pl frequencydomain.tex
 ../latex/bin/lgrep frequencydomainCore.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl frequencydomainCore.tex
+../latex/bin/lgrep frequencydomainSameUnits.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl frequencydomainSameUnits.tex

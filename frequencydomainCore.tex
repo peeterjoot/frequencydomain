@@ -30,20 +30,65 @@ In linear simple media, with \( \BD = \epsilon \BE \), and \( \BB = \mu \BH \), 
 %where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows
 can be used to reduce Maxwell's equations to a pair of coupled multivector equations
 
-\begin{dmath}\label{eqn:frequencydomainCore:60}
+\begin{subequations}
+\label{eqn:frequencydomainCore:60}
+\begin{dmath}\label{eqn:frequencydomainCore:561}
+\spacegrad \BE     = -j \omega \mu (I \BH) + \rho/\epsilon
+\end{dmath}
+\begin{dmath}\label{eqn:frequencydomainCore:560}
+\spacegrad (I \BH) = -\BJ - j \omega \epsilon \BE.
+\end{dmath}
+\end{subequations}
+
+In the source free case, these can be decoupled trivially by multiplying both equations by the gradient
+
+\begin{dmath}\label{eqn:frequencyDomainCore:581}
 \begin{aligned}
-\spacegrad \BE     &= -j \omega \mu (I \BH) + \rho/\epsilon \\
-\spacegrad (I \BH) &= -\BJ - j \omega \epsilon \BE.
+\spacegrad^2 \BE     &= -j \omega \mu \spacegrad (I \BH)
+\spacegrad^2 (I \BH) &= - j \omega \epsilon \spacegrad \BE.
 \end{aligned}
 \end{dmath}
 
-Furthermore, introducing a multivector electromagnetic field
+After substitution of \cref{eqn:frequencydomainCore:60} these are
+
+%\begin{dmath}\label{eqn:frequencyDomainCore:601}
+\boxedEquation{eqn:frequencyDomainCore:621}{
+\begin{aligned}
+\spacegrad^2 \BE     &= - \omega^2 \epsilon \mu \BE \\
+\spacegrad^2 (I \BH) &= -  \omega^2 \epsilon \mu I \BH.
+\end{aligned}
+}
+%\end{dmath}
+
+These can now be solved separately, subject to the constraints imposed by the first order system \cref{eqn:frequencydomainCore:60}.
+
+Geometric algebra allows for an alternate way of dealing with the coupled equations, allowing both equations to be assembled into a single ffirst order system.  How to perform that assembly is made more clear by first casting \cref{eqn:frequencydomainCore:60} into a non-dimensional form
+
+\begin{subequations}
+\label{eqn:frequencydomainCore:641}
+\begin{dmath}\label{eqn:frequencydomainCore:661}
+\spacegrad (\sqrt{\epsilon} \BE)     = -j \omega \sqrt{\epsilon\mu} (\sqrt{\mu} I \BH) + \rho/\sqrt{\epsilon}
+\end{dmath}
+\begin{dmath}\label{eqn:frequencydomainCore:681}
+\spacegrad (\sqrt{\mu} I \BH) = -\sqrt{\mu} \BJ - j \omega \sqrt{\epsilon\mu} (\sqrt{\epsilon} \BE).
+\end{dmath}
+\end{subequations}
+
+Since \( \BE \) is a vector and \( I \BH \) is a bivector, either field can be recovered from a linear combination of these fields using vector or bivector grade selection operations.  In particular, summing the non-dimensional equations gives
+
+\begin{dmath}\label{eqn:frequencyDomainCore:701}
+\spacegrad \lr{ \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH } = -j \omega \sqrt{\epsilon\mu} \lr{ \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH }
++ \rho/\sqrt{\epsilon} -\sqrt{\mu} \BJ.
+\end{dmath}
+
+Here non-dimensional units have been used, which decouple the field equations in terms of a multivector field \( F = \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH \).
+In physics the fields are usually described in terms of \( \BE, \BB \), or \( F = \BE + v I \BB \), where \( v = \sqrt{\epsilon\mu} \) is the group velocity found solving for the waves of \cref{eqn:frequencyDomainCore:621}.  In engineering, \( \BE, \BH \) are often taken as the primary fields, so the desired choice of units means the multivector field should be
 
 \begin{dmath}\label{eqn:frequencydomainCore:80}
 F = \BE + \eta I \BH,
 \end{dmath}
 
-where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media, a further consolidation is possible
+where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media.  The first order decoupled equations for field are therefore
 
 \begin{dmath}\label{eqn:frequencydomainCore:100}
 (\spacegrad + j k) F
@@ -51,7 +96,11 @@ where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media, a further 
 \rho/\epsilon - \eta \BJ.
 \end{dmath}
 
-Here \( k = \omega/v \) is the wave number, and \( v = 1/\sqrt{\mu\epsilon} \) is the group velocity of a wave in the media.  Observe that there are two complex quantities in the mix \( j = \sqrt{-1} \), and \( I^2 = -1 \), each of which commutes with any of the fields or sources, or the gradient operator.
+Here \( k = \omega/v \) is the wave number.
+%, and \( v = 1/\sqrt{\mu\epsilon} \) is the group velocity of a wave in the media.  
+Observe that there are two complex quantities in the mix \( j = \sqrt{-1} \), and \( I^2 = -1 \), each of which commutes with any of the fields or sources, or the gradient operator.
+
+The reader may wonder why \cref{eqn:frequencydomainCore:661} were added and not subtracted.  This is also possible, and would essentially amount to a different choice of phase for the magnetic field.  Use of addition instead of subtraction is partially just convention, but is also consistent with the conventions used for relativistic treatments of Maxwell's equation in GA.
 
 \makeexample{Extracting the electric and magnetic fields.}{example:frequencydomainCore:1}{
 
