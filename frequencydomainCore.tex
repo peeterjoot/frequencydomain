@@ -82,7 +82,7 @@ Since \( \BE \) is a vector and \( I \BH \) is a bivector, either field can be r
 \end{dmath}
 
 Here non-dimensional units have been used, which decouple the field equations in terms of a multivector field \( F = \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH \).
-In physics the fields are usually described in terms of \( \BE, \BB \), or \( F = \BE + v I \BB \), where \( v = \sqrt{\epsilon\mu} \) is the group velocity found solving for the waves of \cref{eqn:frequencyDomainCore:621}.  In engineering, \( \BE, \BH \) are often taken as the primary fields, so the desired choice of units means the multivector field should be
+In physics the fields are usually described in terms of \( \BE, \BB \), or \( F = \BE + v I \BB \), where \( v = 1/\sqrt{\epsilon\mu} \) is the group velocity found solving for the waves of \cref{eqn:frequencyDomainCore:621}.  In engineering, \( \BE, \BH \) are often taken as the primary fields, so the desired choice of units means the multivector field should be
 
 \begin{dmath}\label{eqn:frequencydomainCore:80}
 F = \BE + \eta I \BH,
@@ -90,11 +90,11 @@ F = \BE + \eta I \BH,
 
 where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media.  The first order decoupled equations for field are therefore
 
-\begin{dmath}\label{eqn:frequencydomainCore:100}
+\boxedEquation{eqn:frequencydomainCore:100}{
 (\spacegrad + j k) F
 =
 \rho/\epsilon - \eta \BJ.
-\end{dmath}
+}
 
 Here \( k = \omega/v \) is the wave number.
 %, and \( v = 1/\sqrt{\mu\epsilon} \) is the group velocity of a wave in the media.  
