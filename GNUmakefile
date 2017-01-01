@@ -12,8 +12,7 @@ GENERATED_PDFS += $(THISBOOK).pdf
 all :: $(COPIED_FILES)
 all :: myrefs.bib $(GENERATED_PDFS)
 
-$(THISBOOK).pdf :: frequencydomainCore.tex
-$(THISBOOK).pdf :: frequencydomainSameUnits.tex
+$(THISBOOK).pdf :: $(wildcard *.tex)
 $(GENERATED_PDFS) :: $(JUSTBOOKDEPENDENCIES) $(LOCAL_FILES) $(GENERATED_SOURCES) $(COPIED_FILES) $(LOCAL_COPIED_FILES)
 
 include ../latex/make.rules
