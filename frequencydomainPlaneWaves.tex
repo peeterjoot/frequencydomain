@@ -4,21 +4,15 @@
 %
 %\section{Plane waves}
 
-%For source free conditions, and plane waves of the form \( \BE = \BE_0 e^{-j \Bk \cdot \Bx}, \BH = \BH_0 e^{-j \Bk \cdot \Bx} \), Maxwell's \cref{eqn:frequencydomainCore:100} is reduced to a single homogeneous first order multivector equation
-
-\begin{dmath}\label{eqn:frequencydomainCore:140}
-(\spacegrad + j k) F = 0.
-\end{dmath}
-
-The gradient action on the electromagnetic field, with summation convention implied, is
+The gradient action on the electromagnetic field is
 
 \begin{dmath}\label{eqn:frequencydomainCore:160}
 \spacegrad F_0 e^{-j \Bk \cdot \Bx}
 =
-\Be_m \partial_m
+\sum_{m = 1}^3 \Be_m \partial_m
 F_0 e^{-j \Bk \cdot \Bx}
 =
-\Be_m
+\sum_{m = 1}^3 \Be_m
 F_0
 \lr{ -j k_m }
 e^{-j \Bk \cdot \Bx}
@@ -34,27 +28,34 @@ j k (1 - \kcap) F_0 = 0.
 
 This means that the field must be of the form
 
-\begin{dmath}\label{eqn:frequencydomainCore:200}
+%\begin{dmath}\label{eqn:frequencydomainCore:200}
+\boxedEquation
+{eqn:frequencydomainCore:200}
+{
 F = (1 + \kcap) \BE_0 e^{-j \Bk \cdot \Bx},
-\end{dmath}
+}
+%\end{dmath}
 
 where \( \BE_0 \) is a vector valued complex constant, and \( \kcap \cdot \BE_0 = 0 \).  The dot product constraint follows from the requirement that the \( I \BH \propto \kcap \BE_0 \) portion of the electromagnetic field is a bivector.
 
 From \cref{eqn:frequencydomainCore:200} the interdependence of the electric and magnetic field portions of the field can be read off immediately.  Those are
 
-\begin{dmath}\label{eqn:frequencydomainCore:220}
-\begin{aligned}
-\BE &= \BE_0 e^{-j \Bk \cdot \Bx} \\
-I \BH &= \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx},
-\end{aligned}
+\begin{subequations}
+\label{eqn:frequencydomainCore:220}
+\begin{dmath}\label{eqn:frequencydomainCore:221}
+\BE = \BE_0 e^{-j \Bk \cdot \Bx} 
 \end{dmath}
+\begin{dmath}\label{eqn:frequencydomainCore:222}
+I \BH = \inv{\eta} \kcap \BE_0 e^{-j \Bk \cdot \Bx},
+\end{dmath}
+\end{subequations}
 
 or
 \begin{dmath}\label{eqn:frequencydomainCore:380}
 I \BH = \inv{\eta} \kcap \BE.
 \end{dmath}
 
-Since \R{3} pseudoscalar can be written as
+Since the \R{3} pseudoscalar can be written as
 
 \begin{dmath}\label{eqn:frequencydomainCore:400}
 I = \kcap \Ecap \Hcap,

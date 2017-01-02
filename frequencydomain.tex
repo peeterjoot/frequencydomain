@@ -34,8 +34,17 @@
 \section{Geometric Algebra form of Maxwell's equations in the frequency domain}
    \input{frequencydomainMaxwells.tex}
 
+\makeexample{Extracting the electric and magnetic fields.}{example:frequencydomainCore:1}{
+\input{frequencydomainMaxwellsExtraction.tex}
+} % example
+
 \section{Plane waves}
 For source free conditions, and plane waves of the form \( \BE = \BE_0 e^{-j \Bk \cdot \Bx}, \BH = \BH_0 e^{-j \Bk \cdot \Bx} \), Maxwell's \cref{eqn:frequencydomainCore:100} is reduced to a single homogeneous first order multivector equation
+
+\begin{dmath}\label{eqn:frequencydomainCore:140}
+(\spacegrad + j k) F = 0.
+\end{dmath}
+
    \input{frequencydomainPlaneWaves.tex}
 
 \section{Alternate approach}
