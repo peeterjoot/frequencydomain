@@ -6,59 +6,59 @@
 
 Presuming time dependence of all fields and sources of the form
 
-\begin{dmath}\label{eqn:frequencydomainCore:20}
+\begin{equation}\label{eqn:frequencydomainCore:20}
 \calT(\Bx, t) = \Real( T(\Bx) e^{j \omega t} ),
-\end{dmath}
+\end{equation}
 
 the time harmonic form of Maxwell's equations are
 
-\begin{dmath}\label{eqn:frequencydomainCore:40}
+\begin{equation}\label{eqn:frequencydomainCore:40}
 \begin{aligned}
 \spacegrad \cross \BE &= -j \omega \BB \\
 \spacegrad \cdot \BD &= \rho \\
 \spacegrad \cross \BH &= \BJ + j \omega \BD \\
 \spacegrad \cdot \BB &= 0.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 In linear simple media, with \( \BD = \epsilon \BE \), and \( \BB = \mu \BH \), the Geometric Algebra identity
 
-\begin{dmath}\label{eqn:frequencydomainCore:120}
+\begin{equation}\label{eqn:frequencydomainCore:120}
 \Bx \By = \Bx \cdot \By + I \Bx \cross \By,
-\end{dmath}
+\end{equation}
 
 %where \( I = \Be_1 \Be_2 \Be_3 \) is the \R{3} pseudoscalar, allows
 can be used to reduce Maxwell's equations to a pair of coupled multivector equations
 
 \begin{subequations}
 \label{eqn:frequencydomainCore:60}
-\begin{dmath}\label{eqn:frequencydomainCore:561}
+\begin{equation}\label{eqn:frequencydomainCore:561}
 \spacegrad \BE     = -j \omega \mu (I \BH) + \rho/\epsilon
-\end{dmath}
-\begin{dmath}\label{eqn:frequencydomainCore:560}
+\end{equation}
+\begin{equation}\label{eqn:frequencydomainCore:560}
 \spacegrad (I \BH) = -\BJ - j \omega \epsilon \BE.
-\end{dmath}
+\end{equation}
 \end{subequations}
 
 In the source free case, these can be decoupled trivially by multiplying both equations by the gradient
 
-\begin{dmath}\label{eqn:frequencyDomainCore:581}
+\begin{equation}\label{eqn:frequencyDomainCore:581}
 \begin{aligned}
 \spacegrad^2 \BE     &= -j \omega \mu \spacegrad (I \BH) \\
 \spacegrad^2 (I \BH) &= - j \omega \epsilon \spacegrad \BE.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 After substitution of \cref{eqn:frequencydomainCore:60} these are
 
-%\begin{dmath}\label{eqn:frequencyDomainCore:601}
+%\begin{equation}\label{eqn:frequencyDomainCore:601}
 \boxedEquation{eqn:frequencyDomainCore:621}{
 \begin{aligned}
 \spacegrad^2 \BE     &= - \omega^2 \epsilon \mu \BE \\
 \spacegrad^2 (I \BH) &= -  \omega^2 \epsilon \mu I \BH.
 \end{aligned}
 }
-%\end{dmath}
+%\end{equation}
 
 These can now be solved separately, subject to the constraints imposed by the first order system \cref{eqn:frequencydomainCore:60}.
 
@@ -66,27 +66,27 @@ Geometric algebra allows for an alternate way of dealing with the coupled equati
 
 \begin{subequations}
 \label{eqn:frequencydomainCore:641}
-\begin{dmath}\label{eqn:frequencydomainCore:661}
+\begin{equation}\label{eqn:frequencydomainCore:661}
 \spacegrad (\sqrt{\epsilon} \BE)     = -j \omega \sqrt{\epsilon\mu} (\sqrt{\mu} I \BH) + \rho/\sqrt{\epsilon}
-\end{dmath}
-\begin{dmath}\label{eqn:frequencydomainCore:681}
+\end{equation}
+\begin{equation}\label{eqn:frequencydomainCore:681}
 \spacegrad (\sqrt{\mu} I \BH) = -\sqrt{\mu} \BJ - j \omega \sqrt{\epsilon\mu} (\sqrt{\epsilon} \BE).
-\end{dmath}
+\end{equation}
 \end{subequations}
 
 Since \( \BE \) is a vector and \( I \BH \) is a bivector, either field can be recovered from a linear combination of these fields using vector or bivector grade selection operations.  In particular, summing the non-dimensional equations gives
 
-\begin{dmath}\label{eqn:frequencyDomainCore:701}
+\begin{equation}\label{eqn:frequencyDomainCore:701}
 \spacegrad \lr{ \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH } = -j \omega \sqrt{\epsilon\mu} \lr{ \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH }
 + \rho/\sqrt{\epsilon} -\sqrt{\mu} \BJ.
-\end{dmath}
+\end{equation}
 
 Here non-dimensional units have been used, which decouple the field equations in terms of a multivector field \( F = \sqrt{\epsilon} \BE + \sqrt{\mu} I \BH \).
 In physics the fields are usually described in terms of \( \BE, \BB \), or \( F = \BE + v I \BB \), where \( v = 1/\sqrt{\epsilon\mu} \) is the group velocity found solving for the waves of \cref{eqn:frequencyDomainCore:621}.  In engineering, \( \BE, \BH \) are often taken as the primary fields, so the desired choice of units means the multivector field should be
 
-\begin{dmath}\label{eqn:frequencydomainCore:80}
+\begin{equation}\label{eqn:frequencydomainCore:80}
 F = \BE + \eta I \BH,
-\end{dmath}
+\end{equation}
 
 where \( \eta = \sqrt{\mu/\epsilon} \) is the impedance of the media.  The first order decoupled equations for field are therefore
 

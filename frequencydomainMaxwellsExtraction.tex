@@ -8,12 +8,12 @@ With two complex quantities in the field multivector
 it might be unclear how to recover the separate electric and magnetic fields.
 While \( F \) is complex with respect to both \( j \) and \( I \), this multivector has two different grades.  Specifically, \( \BE \) is a vector and \( I \BH \) is a bivector, and can both be extracted using grade selection operations.  Suppose for example
 
-\begin{dmath}\label{eqn:frequencydomainCore:460}
+\begin{equation}\label{eqn:frequencydomainCore:460}
 \begin{aligned}
 \BE &= e_1 e^{-j k z} \\
 \BH &= \inv{\eta} e_2 e^{-j k z}
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 The composite electromagnetic field is
 
@@ -25,15 +25,17 @@ Extracting \( \BE\), and \( \BH \) when desired requires grade 1 and grade 2 sel
 
 \begin{subequations}
 \label{eqn:frequencydomainCore:500}
-\begin{dmath}\label{eqn:frequencydomainCore:520}
+\begin{equation}\label{eqn:frequencydomainCore:520}
 \BE = \gpgradeone{F} = \Be_1 e^{-j k z} \\
-\end{dmath}
-\begin{dmath}\label{eqn:frequencydomainCore:540}
+\end{equation}
+\begin{equation}\label{eqn:frequencydomainCore:540}
+\begin{aligned}
 \BH
-= -\frac{I}{\eta} \gpgradetwo{F}
-= -\inv{\eta} (\Be_1 \Be_2 \Be_3) \Be_3 \Be_1 e^{-j k z}
-= \inv{\eta} \Be_2 e^{-j k z}.
-\end{dmath}
+&= -\frac{I}{\eta} \gpgradetwo{F} \\
+&= -\inv{\eta} (\Be_1 \Be_2 \Be_3) \Be_3 \Be_1 e^{-j k z} \\
+&= \inv{\eta} \Be_2 e^{-j k z}.
+\end{aligned}
+\end{equation}
 \end{subequations}
 
 The key here is that the spatial pseudoscalar, while it satisfies \( I^2 = -1 \) like a complex number, also has a geometric structure and can be distinguished from the scalar complex \( j \) that is used in the phasor construction.
